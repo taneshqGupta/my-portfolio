@@ -107,6 +107,7 @@ main {
   top: 8rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 /* Individual Social Icons */
