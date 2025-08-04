@@ -59,7 +59,7 @@ header::after {
   padding: 1.2rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* Logo Text */
@@ -69,59 +69,6 @@ header::after {
   font-size: 2.5rem;
   color: var(--sienna);
   letter-spacing: 1px;
-}
-
-/* Desktop Nav Menu */
-nav {
-  display: flex;
-  gap: 2.5rem;
-}
-
-/* Nav Link Styling */
-nav a {
-  font-weight: bold;
-  color: var(--sienna);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--black);
-}
-
-/* Hamburger Icon (hidden by default) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 26px;
-  height: 3px;
-  background: var(--black);
-}
-
-/* Mobile Nav Menu */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: var(--sienna);
-  padding: 1rem 2rem;
-  border-top: 1px solid var(--tan);
-}
-
-.mobile-nav a {
-  padding: 0.75rem 0;
-  font-size: 1rem;
-  color: var(--papaya-whip);
-  text-decoration: none;
-}
-
-.mobile-nav a:hover {
-  color: var(--sienna);
 }
 
 /* === Main Content Wrapper === */
@@ -258,21 +205,6 @@ footer {
 .footer-links a:hover,
 .footer-contact a:hover {
   color: var(--tan);
-}
-
-/* === Responsive Header Behavior === */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .mobile-nav.show {
-    display: flex;
-  }
 }
 
 /* === Hero Section === */

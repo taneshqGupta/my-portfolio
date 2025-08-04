@@ -6,18 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
 
   // ==========================
-  // Mobile Menu Toggle
-  // ==========================
-
-  // Toggles mobile nav visibility on hamburger click
-  function toggleMobileNav() {
-    document.getElementById("mobileMenu").classList.toggle("show");
-  }
-
-  // Expose function globally to use in inline HTML
-  window.toggleMobileNav = toggleMobileNav;
-
-  // ==========================
   // Initial Page Load Animations
   // ==========================
 
@@ -35,9 +23,9 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Slide in desktop nav links & sidebar icons from above
+      // Slide in sidebar icons from above
       .from(
-        ".desktop-nav a, .social-sidebar a",
+        ".social-sidebar a",
         {
           y: -100,
           opacity: 0,
