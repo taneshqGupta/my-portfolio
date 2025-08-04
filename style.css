@@ -219,8 +219,8 @@ main {
 footer {
   background: var(--sienna-2);
   color: var(--white);
-  padding: 3rem 2rem;
-  min-height: 50vh;
+  padding: 2rem 2rem;
+  min-height: 25vh;
 }
 
 .footer-inner {
