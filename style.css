@@ -163,51 +163,6 @@ main {
   }
 }
 
-/* === Footer Section === */
-footer {
-  background: var(--sienna-2);
-  color: var(--white);
-  padding: 2rem 2rem;
-  min-height: 15vh;
-}
-
-.footer-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-/* Logo inside footer */
-.footer-logo {
-  font-family: "Veneer", serif;
-  font-size: 1.5rem;
-  font-weight: normal;
-  letter-spacing: 1px;
-}
-
-/* Link and Contact Groups */
-.footer-links,
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-links a,
-.footer-contact a {
-  color: var(--papaya-whip);
-  font-size: 0.95rem;
-  text-decoration: none;
-}
-
-.footer-links a:hover,
-.footer-contact a:hover {
-  color: var(--tan);
-}
-
 /* === Hero Section === */
 .hero {
   position: relative;
