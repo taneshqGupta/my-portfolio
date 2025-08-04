@@ -349,7 +349,7 @@ footer {
   z-index: 5;
   width: 20%;
   height: auto;
-  transform: translate(-50%, -50%) rotate(-20deg) scale(100);
+  transform: rotate(-30deg) scale(100);
   opacity: 0;
   filter: brightness(0.5);
 }
