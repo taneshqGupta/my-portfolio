@@ -168,7 +168,7 @@ footer {
   background: var(--sienna-2);
   color: var(--white);
   padding: 2rem 2rem;
-  min-height: 25vh;
+  min-height: 15vh;
 }
 
 .footer-inner {
