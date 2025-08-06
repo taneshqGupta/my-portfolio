@@ -1,6 +1,4 @@
-### Taneshq Gupta Portfolio
-
-Modern portfolio website showcasing full-stack development skills.
+### My Portfolio
 
 #### Tech Stack
 
