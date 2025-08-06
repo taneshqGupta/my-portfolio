@@ -1,20 +1,12 @@
-// Wait until the full DOM is loaded before running scripts
 window.addEventListener("DOMContentLoaded", () => {
-  // Register ScrollTrigger plugin from GSAP
   gsap.registerPlugin(ScrollTrigger);
 
   const header = document.querySelector("header");
 
-  // ==========================
-  // Initial Page Load Animations
-  // ==========================
-
   function runInitialAnimations() {
-    // Create a timeline with default easing
     const onLoadTl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
     onLoadTl
-      // Animate header border width expansion
       .to(
         "header",
         {
@@ -23,7 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Slide in sidebar icons from above
       .from(
         ".social-sidebar a",
         {
@@ -35,7 +26,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Animate sidebar border height
       .to(
         ".social-sidebar",
         {
@@ -44,7 +34,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Fade in hero heading
       .to(
         ".hero-content h1",
         {
@@ -53,7 +42,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Animate text stroke to solid color
       .to(
         ".hero-content h1",
         {
@@ -64,7 +52,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Slide in each line of the heading from the right
       .from(
         ".hero-content .line",
         {
@@ -77,7 +64,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Reveal the bottle wrapper
       .to(
         ".hero-bottle-wrapper",
         {
@@ -89,7 +75,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Pop-in stamp image with scaling
       .to(
         ".hero-stamp",
         {
@@ -101,7 +86,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         0
       )
-      // Subtle vibration/bounce effect on the stamp
       .to(
         ".hero-stamp",
         {
@@ -116,10 +100,6 @@ window.addEventListener("DOMContentLoaded", () => {
       );
   }
 
-  // ==========================
-  // Reusable Scroll-Based Animation Setup
-  // ==========================
-
   function pinAndAnimate({
     trigger,
     endTrigger,
@@ -128,10 +108,8 @@ window.addEventListener("DOMContentLoaded", () => {
     markers = false,
     headerOffset = 0,
   }) {
-    // Define scroll end position with header offset
     const end = `top top+=${headerOffset}`;
 
-    // Create a GSAP timeline connected to ScrollTrigger
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger,
@@ -141,29 +119,21 @@ window.addEventListener("DOMContentLoaded", () => {
         scrub: true,
         pin,
         pinSpacing: false,
-        markers: markers, // for debugging
-        invalidateOnRefresh: true, // ensures recalculation on resize
+        markers: markers,
+        invalidateOnRefresh: true,
       },
     });
 
-    // Loop through each animation object
     animations.forEach(({ target, vars, position = 0 }) => {
       tl.to(target, vars, position);
     });
   }
 
-  // ==========================
-  // ScrollTrigger Configurations for Desktop & Mobile
-  // ==========================
-
   function setupScrollAnimations() {
     const headerOffset = header.offsetHeight - 1;
 
-    // Use matchMedia to handle responsive behaviors
     ScrollTrigger.matchMedia({
-      // Desktop scroll animations
       "(min-width: 769px)": function () {
-        // 1. Bottle animates on scroll from hero to intro
         pinAndAnimate({
           trigger: ".hero",
           endTrigger: ".section-intro",
@@ -174,7 +144,6 @@ window.addEventListener("DOMContentLoaded", () => {
           headerOffset,
         });
 
-        // 2. Bottle shifts right during the intro section
         pinAndAnimate({
           trigger: ".section-intro",
           endTrigger: ".timeline-entry:nth-child(even)",
@@ -187,7 +156,6 @@ window.addEventListener("DOMContentLoaded", () => {
           headerOffset,
         });
 
-        // 3. Bottle shifts left during the first timeline entry
         pinAndAnimate({
           trigger: ".timeline-entry:nth-child(even)",
           endTrigger: ".timeline-entry:nth-child(odd)",
@@ -201,7 +169,6 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       },
 
-      // Mobile fallback animation (no scroll-based logic)
       "(max-width: 768px)": function () {
         gsap.to(".hero-bottle-wrapper", {
           opacity: 1,
@@ -212,13 +179,8 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // Init Everything on Load
-  // ==========================
+  runInitialAnimations();
+  setupScrollAnimations();
 
-  runInitialAnimations(); // Load-in animations
-  setupScrollAnimations(); // Scroll-based animations
-
-  // Final recalculation for all ScrollTriggers
   ScrollTrigger.refresh();
 });
