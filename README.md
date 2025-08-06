@@ -23,10 +23,10 @@
 
 #### Development
 
-Clone and open index.html in browser. No build process required.
+###### Clone and open index.html in browser. No build process required.
 
 #### Created
-August 2025
+###### August 2025
 
 #### Author
-Taneshq Gupta - CS Engineering, IIT Mandi
+###### Taneshq Gupta - CS Engineering, IIT Mandi
